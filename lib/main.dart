@@ -23,11 +23,12 @@ class HelloRectangle extends StatelessWidget {
 final _rowheight = 100.0;
 final _boderRadius = BorderRadius.circular(_rowheight / 2);
 
+
 class Category extends StatelessWidget {
   final String name;
   final ColorSwatch color;
   final IconData iconLocation;
-
+  
   const Category({
     Key key,
     @required this.name,
