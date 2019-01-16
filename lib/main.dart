@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
+import 'package:flutter_demo/rowLayout.dart';
 
 class HelloRectangle extends StatelessWidget {
   @override
@@ -89,10 +90,7 @@ void main() {
           title: Text("Hello Rectangle"),
         ),
         body: Center(
-          child: Category(
-              name: "Cake",
-              color: Colors.lightBlueAccent,
-              iconLocation: Icons.cake),
+          child: MyCustomLayout(),
         ),
       ),
     ),
