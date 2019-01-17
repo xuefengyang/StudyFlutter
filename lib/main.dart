@@ -24,12 +24,30 @@ class HelloRectangle extends StatelessWidget {
 final _rowheight = 100.0;
 final _boderRadius = BorderRadius.circular(_rowheight / 2);
 
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Page"),
+      ),
+      body: GestureDetector(
+        onTap: () => Navigator.pop(context),
+        child: Container(
+          child: Center(
+            child: Text("This is Second Content"),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 class Category extends StatelessWidget {
   final String name;
   final ColorSwatch color;
   final IconData iconLocation;
-  
+
   const Category({
     Key key,
     @required this.name,
@@ -50,9 +68,8 @@ class Category extends StatelessWidget {
           borderRadius: _boderRadius,
           highlightColor: color,
           splashColor: color,
-          onTap: () {
-            print("I was tapped");
-          },
+          onTap: () => Navigator.push(
+              context, MaterialPageRoute(builder: (context) => SecondPage())),
           child: Padding(
             padding: EdgeInsets.all(8.0),
             child: Row(
@@ -87,10 +104,14 @@ void main() {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Hello Rectangle"),
+          title: Text("this is first page"),
         ),
         body: Center(
-          child: MyCustomLayout(),
+          child: Category(
+            name: "First Page",
+            iconLocation: Icons.cake,
+            color: Colors.lightBlue,
+          ),
         ),
       ),
     ),
