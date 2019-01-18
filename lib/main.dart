@@ -1,25 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import 'package:flutter_demo/rowLayout.dart';
-
-class HelloRectangle extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        color: Colors.greenAccent,
-        height: 400.0,
-        width: 300.0,
-        child: Center(
-          child: Text(
-            "hello",
-            style: TextStyle(fontSize: 40.0, color: Colors.white),
-          ),
-        ),
-      ),
-    );
-  }
-}
+import 'package:flutter_demo/list/list_push.dart';
 
 final _rowheight = 100.0;
 final _boderRadius = BorderRadius.circular(_rowheight / 2);
@@ -32,7 +13,9 @@ class SecondPage extends StatelessWidget {
         title: Text("Second Page"),
       ),
       body: GestureDetector(
-        onTap: () => Navigator.pop(context),
+        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ListPage(
+          todos: List.generate(20, (i) => Todo('Todo $i', 'Content of Todo $i')),
+        ))),
         child: Container(
           child: Center(
             child: Text("This is Second Content"),
