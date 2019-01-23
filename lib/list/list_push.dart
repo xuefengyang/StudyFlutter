@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/login/index_page.dart';
 
 class Todo {
   final String title;
@@ -107,17 +108,23 @@ class RowLayout extends StatelessWidget {
           Expanded(
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.blue,
-                border: Border.all(width: 10,color: Colors.red,style: BorderStyle.solid)
-              ),
+                  color: Colors.blue,
+                  border: Border.all(
+                      width: 10, color: Colors.red, style: BorderStyle.solid)),
               height: 100.0,
               margin: EdgeInsets.fromLTRB(10, 20, 10, 0),
               child: Center(
                 child: GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LoginIndexPage())),
                   onDoubleTap: () => print("double click"),
                   onLongPress: () => print("Long Press"),
-                  onHorizontalDragStart: (dragStartDetail) => print(dragStartDetail.globalPosition.dx),
-                  onHorizontalDragUpdate: (dragUpdateDetail) => print(dragUpdateDetail.globalPosition.dx),
+                  onHorizontalDragStart: (dragStartDetail) =>
+                      print(dragStartDetail.globalPosition.dx),
+                  onHorizontalDragUpdate: (dragUpdateDetail) =>
+                      print(dragUpdateDetail.globalPosition.dx),
                   child: Text(
                     "Center Text",
                     textAlign: TextAlign.center,
@@ -130,12 +137,13 @@ class RowLayout extends StatelessWidget {
                 ),
               ),
             ),
-          ),Expanded(
+          ),
+          Expanded(
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.blue,
-                  border: Border.all(width: 10,color: Colors.red,style: BorderStyle.solid)
-              ),
+                  border: Border.all(
+                      width: 10, color: Colors.red, style: BorderStyle.solid)),
               height: 100.0,
               margin: EdgeInsets.fromLTRB(0, 20, 10, 0),
               child: Center(

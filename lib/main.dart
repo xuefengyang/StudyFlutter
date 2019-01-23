@@ -13,9 +13,13 @@ class SecondPage extends StatelessWidget {
         title: Text("Second Page"),
       ),
       body: GestureDetector(
-        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ListPage(
-          todos: List.generate(20, (i) => Todo('Todo $i', 'Content of Todo $i')),
-        ))),
+        onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ListPage(
+                      todos: List.generate(
+                          20, (i) => Todo('Todo $i', 'Content of Todo $i')),
+                    ))),
         child: Container(
           child: Center(
             child: Text("This is Second Content"),
