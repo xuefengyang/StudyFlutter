@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/login/login.dart';
+import 'package:flutter_demo/shadow/box.dart';
 
 
 class LoginIndexPage extends StatelessWidget {
@@ -39,7 +40,7 @@ class LoginIndexPage extends StatelessWidget {
                     color: Colors.transparent,
                     child: InkWell(
                       highlightColor: Colors.white70,
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage())),
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ShadowPage())),
                       child: Container(
                         height: 44.0,
                         child: Center(
