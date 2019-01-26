@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/login/login.dart';
 import 'package:flutter_demo/shadow/box.dart';
-
+import 'package:flutter_demo/shadow/state_box.dart';
+import 'package:flutter_demo/layout/wrap.dart';
+import 'login.dart'; // 当前包的引用不需要加入包名前缀
 
 class LoginIndexPage extends StatelessWidget {
 
@@ -40,7 +41,7 @@ class LoginIndexPage extends StatelessWidget {
                     color: Colors.transparent,
                     child: InkWell(
                       highlightColor: Colors.white70,
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ShadowPage())),
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ChangeColorBox())),
                       child: Container(
                         height: 44.0,
                         child: Center(
@@ -60,7 +61,7 @@ class LoginIndexPage extends StatelessWidget {
                     color: Colors.transparent,
                     child: InkWell(
                       highlightColor: Color(0xFF3D4055),
-                      onTap: () => print("ss"),
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => WrapBox())),
                       child: Container(
                         height: 44.0,
                         child: Center(
