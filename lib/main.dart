@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:flutter_demo/list/list_push.dart';
+import 'package:flutter_demo/image/network.dart';
 
 final _rowheight = 100.0;
 final _boderRadius = BorderRadius.circular(_rowheight / 2);
@@ -56,7 +57,7 @@ class Category extends StatelessWidget {
           highlightColor: color,
           splashColor: color,
           onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => SecondPage())),
+              context, MaterialPageRoute(builder: (context) => ImageFromNetWork())),
           child: Padding(
             padding: EdgeInsets.all(8.0),
             child: Row(
